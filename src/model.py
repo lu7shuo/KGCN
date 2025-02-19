@@ -38,7 +38,7 @@ class KGCN(object):
         self.user_indices = tf.placeholder(dtype=tf.int64, shape=[None], name='user_indices')
         self.item_indices = tf.placeholder(dtype=tf.int64, shape=[None], name='item_indices')
         self.labels = tf.placeholder(dtype=tf.float32, shape=[None], name='labels')
-
+    # 构建计算图
     def _build_model(self, n_user, n_entity, n_relation):
         self.user_emb_matrix = tf.get_variable(
             shape=[n_user, self.dim], initializer=KGCN.get_initializer(), name='user_emb_matrix')
